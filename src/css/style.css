@@ -56,6 +56,8 @@ header nav ul{
  
 .container-text h2{
     animation: fadeIn 1s ease-out;
+    font-family: 'Bebas Neue';
+    letter-spacing: 4px;
 } 
 
 .container-text p{
@@ -65,9 +67,11 @@ header nav ul{
 }  
 
 .sao-paulo{
+    font-family: 'Bebas Neue', sans-serif;
     color: red;
     font-size: 4vw;
     font-weight: 700;
+    letter-spacing: 4px;
     margin-top: 10px;
 }
 .container-text .cities-btn{
@@ -109,3 +113,5 @@ header nav ul{
 #cities-list li a:hover {
     background-color: red;
 }
+
+/* Fim da primeira página */
