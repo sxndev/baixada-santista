@@ -7,33 +7,57 @@
     <link rel="stylesheet" href="./src/css/vars.css" />
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/animations.css" />   
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@400..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Syne:wght@400..800&display=swap"
       rel="stylesheet"
-    />
+    /> 
     <title>Baixada Santista</title>
   </head>
-  <body >
-    <header>
+  <body>
+    <header class="header-navigation">
       <h1>Baixada Santista</h1>
       <nav>
         <ul>
-          <li><a href="#home">Início</a></li>
+          <li><a href="index.html">Início</a></li>
           <li><a href="#cities">Cidades</a></li>
-          <li><a href="#about">Sobre Nós</a></li> 
+          <li><a href="#about">Sobre Nós</a></li>
         </ul>
       </nav>
     </header>
 
     <section class="welcome-section">
-        <div class="container-text">
-            <h2 id="home">Bem-vindo à Baixada Santista</h2>          
-    </div>
+      <div class="container-text">
+        <h2 id="home">
+          Bem-vindo à <br />
+          <span id="baixada-santista"> 
+            Baixada Santista
+          </span>
+        </h2>
+        <p>
+          Um verdadeiro paraíso litoraneo do estado de <br />
+          <span>São Paulo</span>
+        </p>
 
-    <img src="./src/img/man-in-beach.jfif" alt="Homem na praia">
+        <p>Navegue e conheça nossas belas cidades acessanndo nosso menu 
+          <a href="#cities">cidades</a></p>
+      </div>
+      <img src="./src/img/man-in-beach.jfif" alt="Homem na praia" />
+      <ul class="cities-list">
+        <li><a href="./src/pages/praia-grande.html">Praia Grande</a></li>
+        <li><a href="./src/pages/santos.html">Santos</a></li>
+        <li><a href="./src/pages/sao-vicente.html">São Vicente</a></li>
+        <li><a href="./src/pages/peruibe.html">Peruíbe</a></li>
+        <li><a href="./src/pages/mongagua.html">Mongaguá</a></li>
+        <li><a href="./src/pages/itanhaem.html">Itanhaém</a></li>
+        <li><a href="./src/pages/guaruja.html">Guarujá</a></li>
+        <li><a href="./src/pages/cubatao.html">Cubatão</a></li>
+        <li><a href="./src/pages/bertioga.html">Bertioga</a></li>
+      </ul>
     </section>
+    <script src="./src/scripts/script.js"></script>
   </body>
 </html>
