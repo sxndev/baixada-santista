@@ -1,5 +1,6 @@
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body{
@@ -11,7 +12,7 @@ body{
 /* Página Inicial */
 
 .header-navigation{
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
@@ -61,36 +62,48 @@ header nav ul{
     animation: fadeIn 1.5s ease-out;  
 }  
 
-.container-text p span {
+.sao-paulo{
     color: red;
     font-size: 4vw;
     font-weight: 700;
     margin-top: 10px;
 }
+.container-text .cities-btn{
+    text-decoration: underline;
+    color: red;
+}
 
-.cities-list{
+.cities-btn{
+    cursor: pointer;
+}
+
+#cities-list{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     right: 0;
-    gap: 10px;
-    border-radius: 20px;
+    gap: 30px;
+    border-radius: 20px; 
     background-color:var(--primary);
     padding: 30px;
-    padding-top: 300px;
+    padding-top: 220px;
     position: absolute;  
     z-index: 100;  
     overflow-y: auto;
     max-height: 40vh;
+    transform: translateX(100%);
+    color: white;
+    border: solid 2px;
 }
 
-.cities-list li{
+#cities-list li a{
     transition: 0.5s all ease; 
     cursor: pointer;
     padding: 15px;
     border-radius: 10px;   
 }
-.cities-list li:hover {
+
+#cities-list li a:hover {
     background-color: red;
 }

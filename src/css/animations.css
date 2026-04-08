@@ -21,3 +21,7 @@
     opacity: 1;
   } 
 }
+
+.enter{
+    animation: 1s enter alternate forwards;
+}
