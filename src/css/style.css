@@ -1,12 +1,15 @@
 html{
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: none;
+    max-width: 100vw;
 }
 
 body{
     font-family: 'Montserrat', sans-serif;
     background-color: var(--primary); 
     color: var(--text);
+    overflow-x: none;
+    max-width: 100vw;
 }
 
 /* Página Inicial */
@@ -45,11 +48,11 @@ header nav ul{
     border-right: none;
     object-fit: cover; 
     animation: enter 1s ease-in-out;
-}
+} 
 
 .container-text{
     padding: 30px;
-    font-size: clamp(10px,3vw, 40px);
+    font-size: clamp(16px,3vw, 40px);
 }
  
 .container-text h2{
