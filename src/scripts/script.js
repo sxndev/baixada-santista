@@ -6,3 +6,4 @@ buttonsCitiesList.forEach(button => {
         citiesList.classList.toggle('enter')
     })
 }); 
+

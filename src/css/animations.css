@@ -8,10 +8,10 @@
     transform: translateY(0);
     opacity: 1;
   }
-} 
+}
 
 @keyframes enter {
-   0% {
+  0% {
     transform: translateX(100%);
     opacity: 0;
   }
@@ -19,9 +19,10 @@
   100% {
     transform: translateX(0);
     opacity: 1;
-  } 
+  }
 }
 
-.enter{
-    animation: 1s enter alternate forwards;
+.enter {
+  animation: 1s enter alternate forwards;
 }
+
