@@ -7,3 +7,4 @@ buttonsCitiesList.forEach(button => {
     })
 }); 
 
+ 

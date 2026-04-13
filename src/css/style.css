@@ -63,8 +63,7 @@ header nav ul {
   font-size: clamp(16px, 4vw, 80px);
 }
 
-.container-text p,
-p {
+.container-text p, p {
   font-size: clamp(14px, 3vw, 30px);
   margin-top: 30px;
   animation: fadeIn 1.5s ease-out;
@@ -164,9 +163,57 @@ p {
   animation: 1s enter ease-in-out forwards;
 }
 
+#cubatao img{
+  object-position:30% ;
+}
 
 @media (max-width: 425px) {
   .about-city-texts {
     padding: 10vh 10px 10px 10px;
   }
+}
+
+
+#about-page{
+  padding: 10vh 0 15vh 0;
+  min-height: 100vh;
+}
+
+.about-group h1{
+  width: 100%;
+  padding: 3vh;
+  font-size: clamp(16px,8vw,50px);
+}
+
+.about-group-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 70%;
+  padding: 20px;
+  /* background-color: red; */
+}
+
+.about-group-texts p{
+  font-size: clamp(16px,1.5vw,20px);
+  padding: 20px;
+  margin-left: 10%;
+  border: solid 1px white;
+  border-radius: 10px;
+  border: solid 1px white;
+  border-radius: 10px;
+}
+
+#members{
+  animation: fadeIn 2s ease-in-out forwards;
+  padding: 20px 30px;
+  border: solid 1px;
+  border-radius: 10px;
+}
+
+#members ul{
+  padding: 10px;
+  list-style-type:circle;
 }
