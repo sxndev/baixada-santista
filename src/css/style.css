@@ -161,7 +161,9 @@ p {
   right: 0;
   border-left: solid 4px;
   object-fit: cover;
+  animation: 1s enter ease-in-out forwards;
 }
+
 
 @media (max-width: 425px) {
   .about-city-texts {
