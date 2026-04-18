@@ -2,7 +2,6 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   max-width: 100vw;
-  scrollbar-width: none;
 }
 
 body {
@@ -22,18 +21,38 @@ body {
   padding: 0 20px;
   width: 100vw;
   height: 10vh;
-  font-size: clamp(14px, 2vw, 16px);
+  font-size: clamp(8px, 2vw, 16px);
   /* border-bottom: solid 4px ; */
-  background-color: white;
+  background-color: var(--third);
   color: var(--primary);
   position: fixed;
+  border-bottom: solid 5px white;
   z-index: 100;
 }
 
-header nav ul {
+.header-navigation nav ul {
   display: flex;
   gap: 10px;
   font-weight: 700;
+  position: relative;
+}
+.header-navigation ul li{
+  position: relative;
+}
+.header-navigation ul li a::after, .cities-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  background-color: white;
+  width: 0%; 
+  transition: width 0.4s ease-in-out;
+}
+
+.header-navigation ul li a:hover::after, 
+.cities-btn:hover::after{
+  width: 100%;
 }
 
 .welcome-section {
@@ -55,34 +74,35 @@ header nav ul {
 
 .container-text {
   padding: 30px;
+  width: 50%;
 }
 
 .container-text h2 {
   animation: fadeIn 1s ease-out;
   font-family: "Bebas Neue";
   letter-spacing: 4px;
-  font-size: clamp(16px, 4vw, 80px);
+  font-size: clamp(16px, 5vw, 80px);
 }
 
 .container-text p, p {
-  font-size: clamp(14px, 3vw, 30px);
+  font-size: clamp(10px, 3vw, 30px);
   margin-top: 30px;
   animation: fadeIn 1.5s ease-out;
 }
 
 .sao-paulo {
   font-family: "Bebas Neue", sans-serif;
-  color: red;
+  color: var(--secondary);
   font-size: 4vw;
   font-weight: 700;
   letter-spacing: 4px;
   margin-top: 10px;
   animation: 1s fadeIn alternate forwards;
+  position: relative;
 }
 
 .container-text .cities-btn {
-  text-decoration: underline;
-  color: red;
+  color: var(--secondary);
 }
 
 .cities-btn {
@@ -96,7 +116,7 @@ header nav ul {
   justify-content: center;
   gap: 30px;
   border-radius: 20px;
-  background-color: var(--primary);
+  background-color: var(--third);
   padding: 30px;
   padding-top: 220px;
   position: fixed;
@@ -118,7 +138,8 @@ header nav ul {
 }
 
 #cities-list li a:hover {
-  background-color: red;
+  background-color: var(--primary);
+  color: var(--third);
 }
 
 /* Fim da primeira página */
@@ -141,9 +162,10 @@ header nav ul {
 }
 
 .city-name {
-  color: red;
-  font-size: 4vw;
+  color: var(--third);
+  font-size: clamp(20px,10vw, 100px);
   font-weight: 700;
+  font-family: 'Bebas Neue';
   letter-spacing: 4px;
   margin-top: 5vh;
   animation: 1s fadeIn alternate forwards;
@@ -167,6 +189,71 @@ header nav ul {
 #cubatao img{
   object-position:30% ;
 }
+
+#cities{
+  min-height: 100vh;
+  /* background-color: black; */
+  background-color: var(--third);
+  color: var(--primary);
+}
+
+#cities h2{
+  font-family:'Bebas Neue', sans-serif;
+  font-size: clamp(20px, 10vw, 100px);
+  color: var(--primary);
+  width: 100%;
+  padding: 3vw; 
+  /* letter-spacing: 3px; */
+}
+#cities-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px ,1fr));
+  gap: 30px; 
+  padding: 30px;
+}
+
+.cards{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color:saddlebrown;
+  color: beige;
+  /* padding: 30px; */
+  min-height: 200px;
+  max-height: 100%;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+
+.cards:hover{
+  transform: scale3d(1.1, 1.1, 1.1);
+  border: solid 2px white;
+}
+
+/* .cards img{
+  width: 50%;
+} */ 
+
+
+#text-container{
+  width: 100%;
+}
+.cards a {
+  width: 100%;
+  height: 100%;
+}
+.cards h3{
+  font-size: clamp(16px, 4vw, 30px);
+}
+
+.cards p {
+  font-size: clamp(12px,2vw, 20px);
+}
+
+.text-container{
+  padding: 20px;
+}
+
 
 @media (max-width: 425px) {
   .about-city-texts {
@@ -208,7 +295,6 @@ header nav ul {
 
 #members{
   padding: 20px ;
-  /* margin-left: 10%; */
   border: solid 1px;
   border-radius: 10px;
   width: 100%;
