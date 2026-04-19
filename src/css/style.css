@@ -23,7 +23,7 @@ body {
   height: 10vh;
   font-size: clamp(8px, 2vw, 16px);
   /* border-bottom: solid 4px ; */
-  background-color: var(--third);
+  background-color: var(--secondary);
   color: var(--primary);
   position: fixed;
   border-bottom: solid 5px white;
@@ -84,9 +84,13 @@ body {
   font-size: clamp(16px, 5vw, 80px);
 }
 
-.container-text p, p {
+.container-text p{
   font-size: clamp(10px, 3vw, 30px);
   margin-top: 30px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+p{
   animation: fadeIn 1.5s ease-out;
 }
 
@@ -116,7 +120,7 @@ body {
   justify-content: center;
   gap: 30px;
   border-radius: 20px;
-  background-color: var(--third);
+  background-color: var(--secondary);
   padding: 30px;
   padding-top: 220px;
   position: fixed;
@@ -139,7 +143,7 @@ body {
 
 #cities-list li a:hover {
   background-color: var(--primary);
-  color: var(--third);
+  color: var(--secondary);
 }
 
 /* Fim da primeira página */
@@ -147,7 +151,7 @@ body {
 .city-page {
   min-height: 90vh;
 }
-
+ 
 .about-city {
   display: flex;
   height: 100%;
@@ -162,7 +166,7 @@ body {
 }
 
 .city-name {
-  color: var(--third);
+  color: var(--secondary);
   font-size: clamp(20px,10vw, 100px);
   font-weight: 700;
   font-family: 'Bebas Neue';
@@ -170,6 +174,7 @@ body {
   margin-top: 5vh;
   animation: 1s fadeIn alternate forwards;
 }
+
 .about-city-texts p {
   margin: 15px;
   font-size: clamp(12px, 2vw, 20px);
@@ -193,7 +198,7 @@ body {
 #cities{
   min-height: 100vh;
   /* background-color: black; */
-  background-color: var(--third);
+  background-color: var(--secondary);
   color: var(--primary);
 }
 
@@ -205,6 +210,7 @@ body {
   padding: 3vw; 
   /* letter-spacing: 3px; */
 }
+
 #cities-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px ,1fr));
@@ -214,13 +220,13 @@ body {
 
 .cards{
   display: flex;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
-  background-color:saddlebrown;
+  background-color:saddlebrown; 
   color: beige;
   /* padding: 30px; */
   min-height: 200px;
-  max-height: 100%;
+  height: 100%;
   border-radius: 25px;
   transition: 0.5s;
 }
@@ -230,11 +236,6 @@ body {
   border: solid 2px white;
 }
 
-/* .cards img{
-  width: 50%;
-} */ 
-
-
 #text-container{
   width: 100%;
 }
@@ -243,7 +244,7 @@ body {
   height: 100%;
 }
 .cards h3{
-  font-size: clamp(16px, 4vw, 30px);
+  font-size: clamp(16px, 4vw, 40px);
 }
 
 .cards p {
@@ -254,7 +255,6 @@ body {
   padding: 20px;
 }
 
-
 @media (max-width: 425px) {
   .about-city-texts {
     padding: 10vh 10px 10px 10px;
@@ -262,13 +262,24 @@ body {
 }
 
 #about-page{
-  padding: 10vh 0 15vh 0;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
 }
 
-.about-group h1{
+.about-group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+#about-page h1{
   width: 100%;
-  padding: 3vh;
+  /* padding: 3vh; */
   font-size: clamp(16px,8vw,50px);
 }
 
@@ -278,29 +289,26 @@ body {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  width: 100%;
-  padding: 10% ;
-  /* background-color: red; */
+  width: 80%;
 }
 
 .about-group-texts p{
-  font-size: clamp(16px,1.5vw,30px);
+  font-size: clamp(16px,1vw,30px);
   padding: 20px;
-  /* margin-left: 10%; */
-  border: solid 1px white;
   border-radius: 10px;
-  border: solid 1px white;
+  border: solid 1px var(--secondary);
   border-radius: 10px;
 }
 
 #members{
-  padding: 20px ;
+  padding: 10px ;
   border: solid 1px;
   border-radius: 10px;
-  width: 100%;
-  font-size: clamp(16px,1vw,30px);
+  width: 80%;
+  background-color: var(--secondary);
+  color: var(--primary);
+  font-size: clamp(10px,1vw,30px);
   animation: 1s fadeIn ease-in-out forwards;
-
 }
 
 #members ul{
