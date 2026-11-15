@@ -4,15 +4,14 @@ const citiesSection = document.getElementById("cities");
 const burguerMenu = document.getElementById('burguer-menu');
 const burguerSpan = burguerMenu.querySelector('#burguer-menu span');
 
-
 burguerMenu.addEventListener('click', () => {
-  burguerMenu.classList.toggle('active') 
-  burguerSpan.classList.toggle('active')
+  burguerMenu.classList.toggle('active'); 
+  burguerSpan.classList.toggle('active');
 
   citiesList.classList.toggle("enter");
-})
+});
 
-const observer = new IntersectionObserver( 
+const toggleColorHeader = new IntersectionObserver( 
   (element) => {
     element.forEach((e) => {
       if (e.isIntersecting) { 
@@ -27,4 +26,4 @@ const observer = new IntersectionObserver(
   { threshold: 0.2 }
 );
 
-observer.observe(citiesSection);
+toggleColorHeader.observe(citiesSection);
