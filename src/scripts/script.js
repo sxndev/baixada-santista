@@ -1,11 +1,20 @@
-const button = document.getElementsByClassName("cities-btn")[0];
+// const button = document.getElementsByClassName("cities-btn")[0];
 const citiesList = document.getElementById("cities-list");
 const menu = document.getElementsByClassName("header-navigation")[0];
 const citiesSection = document.getElementById("cities");
+const burguerMenu = document.getElementById('burguer-menu');
+const burguerSpan = burguerMenu.querySelector('#burguer-menu span');
 
-button.addEventListener("click", () => {
-  citiesList.classList.toggle("enter"); 
-}); 
+// button.addEventListener("click", () => {
+//   citiesList.classList.toggle("enter");
+// }); 
+
+burguerMenu.addEventListener('click', () => {
+  burguerMenu.classList.toggle('active') 
+  burguerSpan.classList.toggle('active')
+
+  citiesList.classList.toggle("enter");
+})
 
 const observer = new IntersectionObserver( 
   (element) => {
@@ -19,7 +28,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.2 },
+  { threshold: 0.2 }
 );
 
 observer.observe(citiesSection);
