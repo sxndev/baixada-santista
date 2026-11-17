@@ -127,9 +127,24 @@ main {
 }
 
 .container-text {
+  text-align: center;
   padding: 30px;
   width: 100%;
+
+  & h2 {
+    animation: fadeIn 1s ease-out;
+    letter-spacing: 4px;
+    font-family: var(--font-1);
+    font-size: clamp(45px, 7vw, 120px);
+  }
+
+  & p {
+    margin-top: 20px;
+    animation: fadeIn 1s ease-out;
+    font-size: clamp(25px, 2vw, 80px);
+  }
 }
+
 svg {
   position: absolute;
   z-index: -1;
@@ -142,56 +157,11 @@ svg {
   background-color: var(--primary);
   background-image: linear-gradient(to bottom, var(--primary));
 }
-/* #surfboard-container {
-  position: absolute;
-  top: 0%;
-  right: 5%;
-  z-index: 10;
-  width: 30%;
-  height: 50%;
-
-  pointer-events: none;
-}
-
-#surfboard-img {
-  position: sticky;
-  top: 100px;
-
-  width: 100%;
-  height: auto;
-
-  display: block;
-  z-index: 10;
-  rotate: 150deg;
-  z-index: 10;
-} */
-.container-text h2 {
-  animation: fadeIn 1s ease-out;
-  font-family: "Bebas Neue";
-  letter-spacing: 4px;
-  font-size: clamp(35px, 5vw, 80px);
-}
-
-.container-text p {
-  font-size: clamp(30px, 3vw, 40px);
-  margin-top: 30px;
-  animation: fadeIn 1.5s ease-out;
-}
-
-
-.container-text .cities-btn {
-  color: var(--secondary);
-}
-
-.cities-btn {
-  cursor: pointer;
-}
 
 #cities-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 30px;
   padding: 30px;
   position: fixed;
@@ -207,11 +177,12 @@ svg {
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  transition: 1s ease-in-out background, transform 1s ease-in-out;
+  transition:
+    1s ease-in-out background,
+    transform 1s ease-in-out;
 
   &.enter {
     transform: translateX(0%);
-    
   }
 }
 
@@ -279,120 +250,120 @@ svg {
   min-height: 100vh;
   background-color: var(--text);
   color: var(--primary);
+  position: relative;
 }
 
 #cities h2 {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(20px, 10vw, 100px);
+  font-family: var(--font-2);
+  font-size: clamp(20px, 5vw, 100px);
   color: var(--primary);
   width: 100%;
   padding: 3vw;
 }
 
+#cities-section-container{
+  display: flex;
+  position: relative;
+
+  & #surfboard-img {
+    display: none;
+    margin-top: 50px;
+    height: 500px;
+    position: sticky;
+    top: 18vh;
+    rotate: 180deg;
+
+    @media (min-width:1070px){
+      display: block;
+    }
+  }
+}
+
 #cities-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  gap: 50px; 
+  padding: 50px;
+
+  @media (max-width:1070px) {
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
 }
 
 .cards {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  color: var(--text);
+  min-height: 300px;
+  width: 100%;
+  max-width: 600px;
   background-color: var(--primary);
-  color: white;
-  min-height: 200px;
-  height: 100%;
-  border-radius: 25px;
-  transition: 0.5s;
-}
+  flex-wrap: wrap;
+  
+  border-radius: 15px;
+  transition: 0.5s ease-in-out transform;
 
-.cards:hover {
-  transform: scale3d(1.1, 1.1, 1.1);
-  border: solid 2px white;
-}
+  &:hover {
+    transform: scale(1.05);
+    border: solid 2px white;
+  }
 
-#text-container {
-  width: 100%;
-}
-.cards a {
-  width: 100%;
-  height: 100%;
-}
-.cards h3 {
-  font-size: clamp(16px, 4vw, 40px);
-}
+  & a {
+    display: flex;    
+    height: 100%;
+    width: 100%;
+    min-width: 250px;
 
-.cards p {
-  font-size: clamp(12px, 2vw, 20px);
-}
+    @media (max-width:540px) {
+      flex-direction: column;
 
-.text-container {
-  padding: 20px;
+      & img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px 15px 0 0;
+      }
+
+      & .text-container{
+        background-color: var(--primary);
+        width: 100%;
+        height: 100%;
+        border-radius: 0 0 15px 15px;
+      }
+    }
+  }
+  & img {
+    width: 50%;
+    min-width: 200px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 0px 0px 15px;
+  }
+  & .text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 200px;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    
+    & h3 {
+      font-family: var(--font-1);
+      font-size: clamp(35px, 5vw, 60px);
+      letter-spacing: 4px;
+    }
+    
+    & p {
+      font-size: clamp(16px, 1.8vw, 20px);
+    }
+  }
 }
 
 @media (max-width: 425px) {
   .about-city-texts {
     padding: 10vh 10px 10px 10px;
   }
-}
-
-#about-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  min-height: 100vh;
-}
-
-.about-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-#about-page h1 {
-  width: 100%;
-  font-size: clamp(16px, 8vw, 50px);
-}
-
-.about-group-texts {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  width: 80%;
-}
-
-.about-group-texts p {
-  font-size: clamp(16px, 1vw, 30px);
-  padding: 20px;
-  border-radius: 10px;
-  border: solid 1px var(--secondary);
-  border-radius: 10px;
-}
-
-#members {
-  padding: 10px;
-  border: solid 1px;
-  border-radius: 10px;
-  width: 80%;
-  background-color: var(--secondary);
-  color: var(--primary);
-  font-size: clamp(10px, 1.5vw, 30px);
-  animation: 1s fadeIn ease-in-out forwards;
-}
-
-#members ul {
-  padding: 10px;
-  list-style-type: circle;
-}
-
-#members span {
-  font-weight: 800;
 }
