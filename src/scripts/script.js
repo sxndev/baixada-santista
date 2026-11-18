@@ -11,21 +11,21 @@ burguerMenu.addEventListener("click", () => {
   sideBar.classList.toggle("enter");
 });
 
-const toggleColorHeader = new IntersectionObserver(
-  (element) => {
-    element.forEach((e) => {
-      if (e.isIntersecting) {
-        sideBar.classList.add("dark-theme");
-        menu.classList.add("dark-theme");
-        console.log("apareceu");
-      } else if (!e.isIntersecting) {
-        sideBar.classList.remove("dark-theme");
-        menu.classList.remove("dark-theme");
-        console.log("desapareceu");
-      }
-    });
-  },
-  { threshold: 0.1 },
-);
+if (citiesSection && sideBar && menu) {
+  const toggleColorHeader = new IntersectionObserver(
+    (element) => {
+      element.forEach((e) => {
+        if (e.isIntersecting) {
+          sideBar.classList.add("dark-theme");
+          menu.classList.add("dark-theme");
+        } else if (!e.isIntersecting) {
+          sideBar.classList.remove("dark-theme");
+          menu.classList.remove("dark-theme");
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
 
-toggleColorHeader.observe(citiesSection);
+  toggleColorHeader.observe(citiesSection);
+}
