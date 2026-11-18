@@ -1,4 +1,4 @@
-const sideBar = document.getElementById("side-bar");
+const sideBar = document.getElementById("cities-list");
 const menu = document.getElementsByClassName("header-navigation")[0];
 const citiesSection = document.getElementById("cities");
 const burguerMenu = document.getElementById("burguer-menu");
